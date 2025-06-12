@@ -28,20 +28,35 @@ public class usuario {
     @Column(name= "ID_USUARIO")
     private long ID_USUARIO;
 
-    @Column(name= "NOMBRE",nullable= false , length = 100)
+    @Column(name= "NOMBRE",nullable= false , length = 30)
     private String NOMBRE;
-    
-    @Column(name = "CORREO",nullable= false , length = 100)
-    private String CORREO;
 
-    @Column(name = "CONTRASENA",nullable= false , length = 30)
-    private String CONTRASENA;
+    @Column(name= "apellido_paterno",nullable= false , length = 30)
+    private String apellido_paterno;
+
+    @Column(name= "apellido_materno",nullable= true , length = 30)
+    private String apellido_materno;
 
     @Column(name = "TELEFONO",nullable= true , length = 9)
     private Long TELEFONO;
 
-
-    @Column(name = "DIRECCION",nullable= true , length = 100)
+    @Column(name = "DIRECCION",nullable= true , length = 50)
     private String DIRECCION;
+
+    @Column(name= "fecha_nacimiento",nullable= true)
+    private Date fecha_nacimiento;
+
+    @Column(name = "CORREO",nullable= false , length = 100)
+    private String CORREO;
+
+    @Column(name = "CONTRASENA",nullable= false , length = 20)
+    private String CONTRASENA;
+
+    @Column(name = "run",nullable= false , length = 20)
+    private int run;
+
+    @Column(name = "dv",nullable= false , length = 1)
+    private String dv;
+
 
 }

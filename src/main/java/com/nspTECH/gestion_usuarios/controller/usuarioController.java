@@ -47,11 +47,11 @@ public class usuarioController {
             usuario usuarioBuscado = usuarioservices.BuscarUnUsuario(ID_USUARIO);
             return ResponseEntity.ok(usuarioBuscado);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encuentran Producto");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encuentran Usuario");
         }
         
     }
-
+/*
     @GetMapping("/UsuarioPedido/{ID_PEDIDO}")
     public ResponseEntity<?> pedidocliente(@PathVariable Long ID_PEDIDO){
 
@@ -71,17 +71,7 @@ public class usuarioController {
         }
         
     }
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 
@@ -92,7 +82,7 @@ public class usuarioController {
             usuario usuarioRegistrar = usuarioservices.GuardarUsuario(usuarioGuardar);
             return ResponseEntity.ok(usuarioRegistrar);
     } catch (Exception e) {
-        return ResponseEntity.status(HttpStatus.CONFLICT).body("No se puede registrar el Producto");
+        return ResponseEntity.status(HttpStatus.CONFLICT).body("No se puede registrar el Usuario");
     }
     }
     
@@ -112,10 +102,15 @@ public class usuarioController {
         try {
             usuario usuarioActualizado = usuarioservices.BuscarUnUsuario(ID_USUARIO);
             usuarioActualizado.setNOMBRE(usuarioActualizar.getNOMBRE());
+            usuarioActualizado.setApellido_paterno(usuarioActualizar.getNOMBRE());
+            usuarioActualizado.setApellido_materno(usuarioActualizar.getApellido_materno());
+            usuarioActualizado.setFecha_nacimiento(usuarioActualizar.getFecha_nacimiento());
             usuarioActualizado.setCORREO(usuarioActualizar.getCORREO());
             usuarioActualizado.setDIRECCION(usuarioActualizar.getDIRECCION());
             usuarioActualizado.setTELEFONO(usuarioActualizar.getTELEFONO());
             usuarioActualizado.setCONTRASENA(usuarioActualizar.getCONTRASENA());
+            usuarioActualizado.setRun(usuarioActualizar.getRun());
+            usuarioActualizado.setDv(usuarioActualizar.getDv());
             usuarioservices.GuardarUsuario(usuarioActualizado);
             return ResponseEntity.ok(usuarioActualizado);
         } catch (Exception e) {
@@ -123,13 +118,5 @@ public class usuarioController {
         }
     }
     
-
-
-
-
-
-
-
-
 
 }
