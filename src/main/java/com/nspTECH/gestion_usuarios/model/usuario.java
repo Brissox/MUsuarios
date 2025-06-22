@@ -27,7 +27,7 @@ public class usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "ID_USUARIO")
-    private long ID_USUARIO;
+    private long id_usuario;
 
     @Column(name= "id_rol", nullable=false)
     @Schema(description="long 10")
@@ -47,11 +47,11 @@ public class usuario {
 
     @Column(name = "TELEFONO",nullable= true , length = 9)
     @Schema(description="")
-    private Long TELEFONO;
+    private Long telefono;
 
     @Column(name = "DIRECCION",nullable= true , length = 50)
     @Schema(description="")
-    private String DIRECCION;
+    private String direccion;
 
     @Column(name= "fecha_nacimiento",nullable= true)
     @Schema(description="")
@@ -59,11 +59,11 @@ public class usuario {
 
     @Column(name = "CORREO",nullable= false , length = 100)
     @Schema(description="")
-    private String CORREO;
+    private String correo;
 
     @Column(name = "CONTRASENA",nullable= false , length = 20)
     @Schema(description="")
-    private String CONTRASENA;
+    private String contrasena;
 
     @Column(name = "run",nullable= false , length = 20)
     @Schema(description="")
@@ -75,7 +75,7 @@ public class usuario {
 
     @Column(name = "Estado",nullable= false , length = 1)
     @Schema(description="")
-    private String Estado;
+    private String estado;
 
 
 }

@@ -84,7 +84,7 @@ public class usuarioController {
 
 //ENDPOINT PARA agregar un usuario
     @PostMapping
-    @Operation(summary = "ENDPOINT QUE REGISTRA UN USUARIO", description = "ENDPOINT QUE REGISTRA UN USUARIO",requestBody= @io.swagger.v3.oas.annotations.parameters.RequestBody(description="USUARIO QUE SE VA A REGISTRAR", required = true), content = @Content(schema = @Schema(implementation = usuario.class)))
+    @Operation(summary = "ENDPOINT QUE REGISTRA UN USUARIO", description = "ENDPOINT QUE REGISTRA UN USUARIO",requestBody= @io.swagger.v3.oas.annotations.parameters.RequestBody(description="USUARIO QUE SE VA A REGISTRAR", required = true, content = @Content(schema = @Schema(implementation = usuario.class))))
     @ApiResponses (value = {
         @ApiResponse(responseCode = "200", description = "Se registro correctamente el usuario", content = @Content(mediaType = "application/json", schema = @Schema(implementation = usuario.class))),
         @ApiResponse(responseCode = "500", description = "Indica que no se logro registrar el usuario", content = @Content(mediaType = "application/json", schema = @Schema(type = "string", example = "No se puede registrar el producto")))
@@ -105,7 +105,7 @@ public class usuarioController {
 //ENDPOINT PARA editar un usuario segun id
     @PutMapping("/{ID_USUARIO}") //SOLO PERMITE ACTUALIZAR ESCRIBIENDO TODOS LOS DATOS
     
-    @Operation(summary = "ENDPOINT QUE EDITA UN USUARIO", description = "ENDPOINT QUE EDITA UN USUARIO", requestBody=@io.swagger.v3.oas.annotations.parameters.RequestBody(description="USUARIO QUE SE VA A EDITAR", required = true), Content = @Content(schema = @Schema(implementation = usuario.class)))
+    @Operation(summary = "ENDPOINT QUE EDITA UN USUARIO", description = "ENDPOINT QUE EDITA UN USUARIO", requestBody=@io.swagger.v3.oas.annotations.parameters.RequestBody(description="USUARIO QUE SE VA A EDITAR", required = true, content = @Content(schema = @Schema(implementation = usuario.class))))
     @Parameters (value = {
         @Parameter (name="ID_USUARIO", description= "ID del usuario que se editara", in = ParameterIn.PATH, required= true)})
 
@@ -123,10 +123,10 @@ public class usuarioController {
             usuarioActualizado.setApellido_paterno(usuarioActualizar.getNOMBRE());
             usuarioActualizado.setApellido_materno(usuarioActualizar.getApellido_materno());
             usuarioActualizado.setFecha_nacimiento(usuarioActualizar.getFecha_nacimiento());
-            usuarioActualizado.setCORREO(usuarioActualizar.getCORREO());
-            usuarioActualizado.setDIRECCION(usuarioActualizar.getDIRECCION());
-            usuarioActualizado.setTELEFONO(usuarioActualizar.getTELEFONO());
-            usuarioActualizado.setCONTRASENA(usuarioActualizar.getCONTRASENA());
+            usuarioActualizado.setCorreo(usuarioActualizar.getCorreo());
+            usuarioActualizado.setDireccion(usuarioActualizar.getDireccion());
+            usuarioActualizado.setTelefono(usuarioActualizar.getTelefono());
+            usuarioActualizado.setContrasena(usuarioActualizar.getContrasena());
             usuarioActualizado.setRun(usuarioActualizar.getRun());
             usuarioActualizado.setDv(usuarioActualizar.getDv());
             usuarioActualizado.setEstado(usuarioActualizar.getEstado());
