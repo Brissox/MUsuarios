@@ -35,7 +35,7 @@ public class usuario {
 
     @Column(name= "NOMBRE",nullable= false , length = 30)
     @Schema(description="")
-    private String NOMBRE;
+    private String nombre;
 
     @Column(name= "apellido_paterno",nullable= false , length = 30)
     @Schema(description="")

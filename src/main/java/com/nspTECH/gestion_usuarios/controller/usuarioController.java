@@ -118,7 +118,7 @@ public class usuarioController {
     public ResponseEntity<?> ActualizarUsuarios(@PathVariable Long ID_USUARIO, @RequestBody usuario usuarioActualizar){
         try {
             usuario usuarioActualizado = usuarioservices.BuscarUnUsuario(ID_USUARIO);
-            usuarioActualizado.setNOMBRE(usuarioActualizar.getNOMBRE());
+            usuarioActualizado.setNombre(usuarioActualizar.getNombre());
             usuarioActualizado.setId_rol(usuarioActualizar.getId_rol());
             usuarioActualizado.setApellido_paterno(usuarioActualizar.getNOMBRE());
             usuarioActualizado.setApellido_materno(usuarioActualizar.getApellido_materno());
