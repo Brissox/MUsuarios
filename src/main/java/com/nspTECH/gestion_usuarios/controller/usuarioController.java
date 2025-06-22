@@ -120,7 +120,7 @@ public class usuarioController {
             usuario usuarioActualizado = usuarioservices.BuscarUnUsuario(ID_USUARIO);
             usuarioActualizado.setNombre(usuarioActualizar.getNombre());
             usuarioActualizado.setId_rol(usuarioActualizar.getId_rol());
-            usuarioActualizado.setApellido_paterno(usuarioActualizar.getNOMBRE());
+            usuarioActualizado.setApellido_paterno(usuarioActualizar.getApellido_paterno());
             usuarioActualizado.setApellido_materno(usuarioActualizar.getApellido_materno());
             usuarioActualizado.setFecha_nacimiento(usuarioActualizar.getFecha_nacimiento());
             usuarioActualizado.setCorreo(usuarioActualizar.getCorreo());
