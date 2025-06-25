@@ -27,54 +27,55 @@ public class usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name= "ID_USUARIO")
+    @Schema(description="identificador del usuario", example="1")
     private long id_usuario;
 
     @Column(name= "id_rol", nullable=false)
-    @Schema(description="long 10")
+    @Schema(description="identificador del rol del usuario", example="1")
     private long id_rol;
 
     @Column(name= "NOMBRE",nullable= false , length = 30)
-    @Schema(description="")
+    @Schema(description="nombre del usuario",example="Juan")
     private String nombre;
 
     @Column(name= "apellido_paterno",nullable= false , length = 30)
-    @Schema(description="")
+    @Schema(description="Apellido paterno del usuario", example="Perez")
     private String apellido_paterno;
 
     @Column(name= "apellido_materno",nullable= true , length = 30)
-    @Schema(description="")
+    @Schema(description="Apellido materno del usuario", example="Rojas")
     private String apellido_materno;
 
     @Column(name = "TELEFONO",nullable= true , length = 9)
-    @Schema(description="")
+    @Schema(description="Telefono de contacto del usuario", example="999777888")
     private Long telefono;
 
     @Column(name = "DIRECCION",nullable= true , length = 50)
-    @Schema(description="")
+    @Schema(description="Direccion del domicilio del usuario", example="inglaterra 123")
     private String direccion;
 
     @Column(name= "fecha_nacimiento",nullable= true)
-    @Schema(description="")
+    @Schema(description="Fecha de nacimiento", example="DD-MM-YYYY")
     private Date fecha_nacimiento;
 
     @Column(name = "CORREO",nullable= false , length = 100)
-    @Schema(description="")
+    @Schema(description="correo de contacto del usuario", example="xxxx@xxx.xxx")
     private String correo;
 
     @Column(name = "CONTRASENA",nullable= false , length = 20)
-    @Schema(description="")
+    @Schema(description="Contrasena del usuario", example="xxxxxxxxxxxx")
     private String contrasena;
 
-    @Column(name = "run",nullable= false , length = 20)
-    @Schema(description="")
+    @Column(name = "run",nullable= false , length = 9)
+    @Schema(description="rol unico natural del usuario sin digito verificador ni puntos",example="11222333")
     private int run;
 
     @Column(name = "dv",nullable= false , length = 1)
-    @Schema(description="")
+    @Schema(description="digito verificador del run", example="k")
     private String dv;
 
     @Column(name = "Estado",nullable= false , length = 1)
-    @Schema(description="")
+    @Schema(description="estado del usuario",example="A=Activo / I=Inactivo")
     private String estado;
 
 
