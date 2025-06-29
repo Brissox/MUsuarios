@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.mockito.ArgumentMatchers.any;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -135,18 +137,40 @@ public class usuariosServiceTest {
 
     }
 
+    @Test
+    public void testEditarUsuario(){
 
-/*
+        usuario usuarioOriginal = new usuario();
+        usuarioOriginal.setId_usuario(11L);
+        usuarioOriginal.setNombre("Bastian");
+        usuarioOriginal.setApellido_paterno("Brisso");
+
+        usuario usuarioEditado = new usuario();
+        usuarioEditado.setId_usuario(11L);
+        usuarioEditado.setNombre("Bruce");
+        usuarioEditado.setApellido_paterno("Wayne");
+
+        when(usuariorepository.save(any(usuario.class))).thenReturn(usuarioEditado);
+        when(usuariorepository.existsById(11L)).thenReturn(true);
+        usuario resultado = usuarioservices.GuardarUsuario(usuarioEditado);
+
+        assertNotNull(resultado);
+        assertEquals(11L, resultado.getId_usuario());
+        assertEquals("Bruce", resultado.getNombre());
+        assertEquals("Wayne", resultado.getApellido_paterno());
+
+        verify(usuariorepository, times(1)).save(usuarioEditado);
+    }
 
     @Test
-    public void testEliminarEnvio(){
+    public void testEliminarUsuario(){
         Long id = 11L;
-        doNothing().when(enviorepository).deleteById(id);
+        doNothing().when(usuariorepository).deleteById(id);
 
-        enviosservices.Eliminar***(id);
+        usuarioservices.EliminarUsuario(11L);
 
-        verify(enviosrepository.times(1)).deleteById(id);
+        verify(usuariorepository, times(1)).deleteById(id);
 
     }
-*/
+
 }
